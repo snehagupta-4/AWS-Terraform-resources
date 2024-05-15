@@ -4,5 +4,5 @@ resource "aws_instance" "newec2" {
 }
 resource "aws_ec2_instance_state" "test" {
   instance_id = aws_instance.newec2.id
-  state       = "stopped"
+  state       = "running"
 }
