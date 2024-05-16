@@ -21,6 +21,7 @@ resource "aws_subnet" "subnet" {
 resource "aws_security_group" "sg" {
   name = "sg1"
   description = "ssh allow port"
+  vpc_id = aws_vpc.main.id
   ingress {
     description = "SSH"
     from_port = 22
