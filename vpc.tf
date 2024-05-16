@@ -17,3 +17,15 @@ resource "aws_subnet" "subnet" {
   cidr_block = "172.0.0.0/16"
   availability_zone = "us-east-1a"
 }
+
+resource "aws_security_group" "sg" {
+  name = "sg1"
+  description = "ssh allow port"
+  ingress {
+    description = "SSH"
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+}
+}

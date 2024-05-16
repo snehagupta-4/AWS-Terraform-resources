@@ -4,6 +4,8 @@ resource "aws_instance" "newec2" {
   subnet_id = aws_subnet.subnet.id
   key_name = aws_key_pair.key.key_name
   associate_public_ip_address = true
+  security_groups = [aws_security_group.sg.id]
+  #vpc_security_group_ids = [aws_vpc.main.id]
 
   tags = {
     name = "ec2_instance"
