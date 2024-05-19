@@ -8,6 +8,6 @@ resource "aws_glue_crawler" "crawler" {
   }
 
   provisioner "local-exec" {
-    command = "aws glue start-crawler --name ${aws_glue_crawler.crawler.name}"
+    command = "aws glue start-crawler --name ${aws_glue_crawler.crawler.name} --region ${var.region}"
   }
 }

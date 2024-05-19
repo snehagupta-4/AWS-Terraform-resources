@@ -1,4 +1,4 @@
-resource "aws_vpc" "main" {
+/*resource "aws_vpc" "main" {
   cidr_block = "172.0.0.0/16"
 
   tags = {
@@ -29,4 +29,4 @@ resource "aws_security_group" "sg" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 }
-}
+}*/

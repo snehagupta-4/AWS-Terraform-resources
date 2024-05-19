@@ -14,5 +14,5 @@ resource "aws_s3_bucket" "bucket2" {
 resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.bucket.id
   key = "sourcejsonfile"
-  source = "C:/Users/snehagup/Downloads"
+  source = "C:/Users/snehagup/Downloads/personal/sample1.json"
 }
