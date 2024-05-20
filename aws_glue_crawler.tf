@@ -7,9 +7,9 @@ resource "aws_glue_crawler" "crawler" {
     path = "s3://${aws_s3_bucket.bucket.bucket}"
   }
 
- /* provisioner "local-exec" {
+ provisioner "local-exec" {
     command = "aws glue start-crawler --name ${aws_glue_crawler.crawler.name} --region ${var.region}"
-  }*/
+  }
 }
 
 resource "null_resource" "run_crawler" {
