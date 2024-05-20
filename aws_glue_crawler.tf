@@ -11,3 +11,10 @@ resource "aws_glue_crawler" "crawler" {
     command = "aws glue start-crawler --name ${aws_glue_crawler.crawler.name} --region ${var.region}"
   }
 }
+
+resource "null_resource" "run_crawler" {
+  # Changes to the crawler's S3 path requires re-running
+  triggers = {
+    s3_path = "${aws_glue_crawler.crawler.s3_target.0.path}"
+  }
+}
