@@ -13,7 +13,10 @@ resource "aws_iam_policy" "gluepolicy" {
                 "iam:ListRolePolicies",
                 "iam:GetRole",
                 "iam:GetRolePolicy",
-                "cloudwatch:PutMetricData"
+                "cloudwatch:PutMetricData",
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
             ],
             "Resource": "*"
         }
