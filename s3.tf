@@ -13,6 +13,7 @@ resource "aws_s3_bucket" "bucket2" {
 
 resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.bucket.id
-  key = "sourcejsonfile"
-  source = "sample1.json"
+  for_each = fileset("s3files/", "**/*.*")
+  key = each.value
+  source = "s3files/${each.value}"
 }
